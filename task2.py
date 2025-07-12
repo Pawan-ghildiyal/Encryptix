@@ -17,7 +17,6 @@ def evaluate():
         entry.delete(0, tk.END)
         entry.insert(0, "Error")
 
-# Create main window
 root = tk.Tk()
 root.title("Calculator")
 root.geometry("300x420")
@@ -26,7 +25,6 @@ root.configure(bg="#f0f4f7")
 entry = tk.Entry(root, font=("Arial", 20), bd=8, relief=tk.RIDGE, justify="right")
 entry.pack(fill=tk.BOTH, ipadx=8, ipady=15, padx=10, pady=10)
 
-# Button layout with '.' added
 buttons = [
     ["7", "8", "9", "/"],
     ["4", "5", "6", "*"],
