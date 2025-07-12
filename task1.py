@@ -44,21 +44,17 @@ def update_listbox():
     for task in completed_tasks:
         listbox.insert(tk.END, f"✅ {task}")
 
-# GUI Setup
 root = tk.Tk()
 root.title("📝 To-Do List")
 root.geometry("400x550")
 root.config(bg="#f0f4f7")
 
-# Fonts
 heading_font = font.Font(family="Helvetica", size=18, weight="bold")
 button_font = font.Font(size=10)
 
-# Heading
 heading = tk.Label(root, text="My To-Do List", font=heading_font, bg="#f0f4f7", fg="#333")
 heading.pack(pady=10)
 
-# Input Frame
 input_frame = tk.Frame(root, bg="#f0f4f7")
 input_frame.pack(pady=10)
 
@@ -68,7 +64,6 @@ entry.grid(row=0, column=0, padx=10)
 add_btn = tk.Button(input_frame, text="Add Task", command=add_task, bg="#4caf50", fg="white", font=button_font)
 add_btn.grid(row=0, column=1)
 
-# Listbox with Scrollbar
 list_frame = tk.Frame(root, bg="#f0f4f7")
 list_frame.pack(pady=10)
 
@@ -80,7 +75,6 @@ listbox.pack()
 
 scrollbar.config(command=listbox.yview)
 
-# Buttons
 btn_frame = tk.Frame(root, bg="#f0f4f7")
 btn_frame.pack(pady=10)
 
@@ -90,5 +84,4 @@ mark_btn.grid(row=0, column=0, padx=5)
 del_btn = tk.Button(btn_frame, text="Delete Task", command=delete_task, bg="#f44336", fg="white", font=button_font, width=15)
 del_btn.grid(row=0, column=1, padx=5)
 
-# Run the App
 root.mainloop()
