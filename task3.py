@@ -46,17 +46,14 @@ def copy_password():
     root.clipboard_append(password_entry.get())
     messagebox.showinfo("Copied", "Password copied to clipboard!")
 
-# GUI Setup
 root = tk.Tk()
 root.title("🔐 Password Generator")
 root.geometry("400x350")
 root.config(bg="#f0f4f7")
 
-# Heading
 heading = tk.Label(root, text="Secure Password Generator", font=("Arial", 16, "bold"), bg="#f0f4f7", fg="#333")
 heading.pack(pady=20)
 
-# Length input
 length_frame = tk.Frame(root, bg="#f0f4f7")
 length_frame.pack(pady=10)
 
@@ -65,21 +62,16 @@ length_var = tk.IntVar(value=12)
 length_entry = tk.Entry(length_frame, textvariable=length_var, font=("Arial", 12), width=5)
 length_entry.grid(row=0, column=1)
 
-# Generate button
 gen_btn = tk.Button(root, text="Generate Password", command=generate_password, bg="#4caf50", fg="white", font=("Arial", 12), width=20)
 gen_btn.pack(pady=10)
 
-# Password Display
 password_entry = tk.Entry(root, font=("Arial", 14), justify="center", bd=2, relief=tk.SUNKEN, width=30)
 password_entry.pack(pady=10)
 
-# Strength Indicator
 strength_label = tk.Label(root, text="Strength: N/A", font=("Arial", 12, "bold"), bg="#f0f4f7", fg="gray")
 strength_label.pack(pady=5)
 
-# Copy Button
 copy_btn = tk.Button(root, text="Copy to Clipboard", command=copy_password, bg="#2196f3", fg="white", font=("Arial", 12), width=20)
 copy_btn.pack(pady=10)
 
-# Run the GUI
 root.mainloop()
